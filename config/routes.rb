@@ -1,6 +1,6 @@
-# config/routes.rb
 Rails.application.routes.draw do
-  resources :restaurants, only: [:index, :new, :create, :show] do
-    resources :reviews, only: [:new, :create]
+  root to: "restaurants#index"
+  resources :restaurants, only: [:index, :show, :new, :create] do
+    resources :reviews, only: [:create]
   end
 end
